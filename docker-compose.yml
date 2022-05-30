@@ -5,28 +5,28 @@ services:
     restart: always
     stdin_open: true
     build:
-      context: ./client
+      context: ./hammerpoint-fe
       dockerfile: Dockerfile.debug
     volumes:
-      - ./client:/app
+      - ./hammerpoint-fe:/app
     ports:
       - '3000:3000'
   clientapp_prod:
     container_name: clientcontainer_prod
     restart: always
     build:
-      context: ./client
+      context: ./hammerpoint-fe
       dockerfile: Dockerfile.prod
     ports:
       - '80:80'
   serverapp_debug:
     container_name: servercontainer_debug
     restart: always
-    build: ./server
+    build: ./hammerpoint-be
     volumes:
-      - ./server:/usr/src/app
+      - ./hammerpoint-be:/usr/src/app
     ports:
-      - '3001:3001'
+      - '3002:3002'
 #  serversideprod:
 #    container_name: servercontainerprod
 #    restart: always
