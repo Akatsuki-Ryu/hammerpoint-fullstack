@@ -1,0 +1,4 @@
+[submodule "hammerpoint-be"]
+	url = https://github.com/Akatsuki-Ryu/hammerpoint-be
+[submodule "hammerpoint-fe"]
+	url = https://github.com/Akatsuki-Ryu/hammerpoint-fe
