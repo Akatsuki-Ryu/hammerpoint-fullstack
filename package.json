@@ -1,0 +1,36 @@
+{
+  "name": "chatroom",
+  "version": "1.0.0",
+  "description": "this is a chatting room application powered by akabox",
+  "main": "index.js",
+  "scripts": {
+    "clean": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +",
+    "prep": "npm install",
+    "serverprep": "cd server && npm install",
+    "clientprep": "cd client && npm install && npm run build",
+    "serverrun": "cd server && npm start",
+    "clientrun": "cd client && npm start",
+    "clientbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "fullstackrun": "run-p serverrun clientrun",
+    "fullprep": "npm run clean && npm install && run-p serverprep clientprep"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akatsuki-Ryu/chatroom.git"
+  },
+  "author": "Akatsuki-Ryu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akatsuki-Ryu/chatroom/issues"
+  },
+  "homepage": "https://github.com/Akatsuki-Ryu/chatroom#readme",
+  "devDependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "express-pino-logger": "^7.0.0",
+    "node-env-run": "^4.0.2",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "pino-colada": "^2.2.2"
+  }
+}
