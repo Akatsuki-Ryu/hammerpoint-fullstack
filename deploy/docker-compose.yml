@@ -1,0 +1,36 @@
+version: '3'
+services:
+#  clientapp_debug:
+#    container_name: clientcontainer_debug
+#    restart: always
+#    stdin_open: true
+#    build:
+#      context: ./hammerpoint-fe
+#      dockerfile: Dockerfile.debug
+#    volumes:
+#      - ./hammerpoint-fe:/app
+#    ports:
+#      - '3000:3000'
+  clientapp_prod:
+    container_name: clientcontainer_prod
+    restart: always
+    image: akabox165/hammerpoint-fe
+    ports:
+      - '80:80'
+  serverapp_debug:
+    container_name: servercontainer_debug
+    restart: always
+    image: akabox165/hammerpoint-be
+    ports:
+      - '3002:3002'
+#  serversideprod:
+#    container_name: servercontainerprod
+#    restart: always
+#    build: ./server
+#    ports:
+#      - '3001:3001'
+#  mongodbapp:
+#    container_name: mongodbcontainer
+#    image: mongo
+#    ports:
+#      - '27017:27017'
