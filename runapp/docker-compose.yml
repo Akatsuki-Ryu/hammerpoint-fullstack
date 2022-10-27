@@ -34,3 +34,16 @@ services:
 #    image: mongo
 #    ports:
 #      - '27017:27017'
+  database_prod:
+    container_name: psqlcontainer
+    image: 'postgres:latest'
+    ports:
+      - '5432:5432'
+    # env_file:
+      # - ./hammerpoint-be/.env.prod
+    # environment:
+      # POSTGRES_USER: user # The PostgreSQL user (useful to connect to the database)
+      # POSTGRES_PASSWORD: pass # The PostgreSQL password (useful to connect to the database)
+      # POSTGRES_DB: hammerpoint-db # The PostgreSQL default database (automatically created at first launch)
+    volumes:
+      - ../db-data/:/var/lib/postgresql/data/
