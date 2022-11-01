@@ -11,18 +11,18 @@ services:
 #      - ./hammerpoint-fe:/app
 #    ports:
 #      - '3000:3000'
-  clientapp_prod:
-    container_name: clientcontainer_prod
-    restart: always
-    image: akabox165/hammerpoint-fe
-    ports:
-      - '80:80'
-  serverapp_debug:
-    container_name: servercontainer_debug
-    restart: always
-    image: akabox165/hammerpoint-be
-    ports:
-      - '3002:3002'
+  # clientapp_prod:
+  #   container_name: clientcontainer_prod
+  #   restart: always
+  #   image: akabox165/hammerpoint-fe
+  #   ports:
+  #     - '80:80'
+  # serverapp_debug:
+  #   container_name: servercontainer_debug
+  #   restart: always
+  #   image: akabox165/hammerpoint-be
+  #   ports:
+  #     - '3002:3002'
 #  serversideprod:
 #    container_name: servercontainerprod
 #    restart: always
