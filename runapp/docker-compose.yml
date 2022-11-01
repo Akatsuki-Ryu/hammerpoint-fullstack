@@ -41,9 +41,14 @@ services:
       - '5432:5432'
     # env_file:
       # - ./hammerpoint-be/.env.prod
-    # environment:
-      # POSTGRES_USER: user # The PostgreSQL user (useful to connect to the database)
-      # POSTGRES_PASSWORD: pass # The PostgreSQL password (useful to connect to the database)
-      # POSTGRES_DB: hammerpoint-db # The PostgreSQL default database (automatically created at first launch)
+    environment:
+      POSTGRES_USER: akabox
+      POSTGRES_PASSWORD: hammerpoint_db_put_your_own_freakingpasswd
+      POSTGRES_DB: postgres
     volumes:
       - ../db-data/:/var/lib/postgresql/data/
+    command: >
+      -c ssl=on 
+      -c ssl_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+      -c ssl_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+      
