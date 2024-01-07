@@ -40,7 +40,7 @@ services:
       - '27017:27017'
   database_prod:
     container_name: psqlcontainer
-    image: 'postgres:latest'
+    image: 'postgres:15'
     ports:
       - '5432:5432'
     env_file:
